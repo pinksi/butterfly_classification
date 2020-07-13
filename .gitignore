@@ -1,0 +1,9 @@
+*.ipynb_checkpoints/
+dataset/
+models/
+Dockerfile
+*.ipynb
+*.csv
+*.zip
+*.sh
+__pycache__
