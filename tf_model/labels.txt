@@ -1,0 +1,10 @@
+0 Danaus_plexippus
+1 Heliconius_charito...
+2 Heliconius_erato
+3 Junonia_coenia
+4 Lycaena_phlaeas
+5 Nymphalis_antiopa
+6 Papilio_cresphonte...
+7 Pieris_rapae
+8 Vanessa_atalanta
+9 Vanessa_cardui
