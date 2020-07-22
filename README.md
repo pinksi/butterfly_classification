@@ -1,6 +1,6 @@
-This repo classifies the input butterfly image among the 10 classes of butterfly. The model is created using [teachable machine](https://teachablemachine.withgoogle.com/train/image)`.
+This repo classifies the input butterfly image among the 10 classes of butterfly. The model is created using [teachable machine](https://teachablemachine.withgoogle.com/train/image)
 
-Dataset Used for training model: `[Leeds Butterfly Dataset](http://www.josiahwang.com/dataset/leedsbutterfly/)`
+Dataset Used for training model: [Leeds Butterfly Dataset](http://www.josiahwang.com/dataset/leedsbutterfly/)
 
 Input: `Image or image path`
 
