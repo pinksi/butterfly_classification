@@ -37,5 +37,8 @@ python app/app.py
 ```
 4. Use postman/insomnia's post request, input image as filetype and get the prediction
 ```
-http://127.0.0.1:5000/api/v1/predict/butterfly/
+http://127.0.0.1:5000/predict/butterfly/
 ```
+OR
+
+Upload the image file and click `predict` button at `http://127.0.0.1:5000/`
