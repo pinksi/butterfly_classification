@@ -1,5 +1,6 @@
 import requests
 from flask import Flask, request, jsonify
+from flask import render_template
 from loguru import logger
 
 from services.image_prediction import predict_image
@@ -12,7 +13,7 @@ def hello_world():
     return "Hello, World!"
 
 
-@app.route("/api/v1/predict/butterfly/", methods=["POST"])
+@app.route("/predict/butterfly/", methods=["POST"])
 def image_prediction():
     if request.headers["Content-Type"].startswith("multipart/form-data"):
         image = request.files.get("image", "")
@@ -27,7 +28,13 @@ def image_prediction():
         "predicted_class": data[0],
         "predicted_probability": data[1],
     }
-    return jsonify(res), 200
+    # return jsonify(res), 200
+    return render_template("index.html", title="Welcome", data=[res])
+
+
+@app.route("/")
+def index():
+    return render_template("index.html", title="Welcome")
 
 
 if __name__ == "__main__":

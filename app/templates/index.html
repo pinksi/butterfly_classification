@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <title>Predict the butterfly</title>
+</head>
+
+<body>
+    <h1>Hello!! {{title}}</h1>
+    <form action="{{ url_for('image_prediction') }}" method="POST" enctype="multipart/form-data">
+        <input name="image" type="file" />
+        <input type="submit" value="Upload" />
+    </form>
+
+
+    <p>============================================</p>
+    <h4>Prediction</h4>
+    <p>============================================</p>
+    <ul>
+        {% for item in data %}
+        <p><b>FileName: </b>{{item.file_name}}</p>
+        <p><b>Predicted Class: </b>{{item.predicted_class}}</p>
+        <p><b>Predicted Probability: </b>{{item.predicted_probability}}</p>
+        {% endfor %}
+    </ul>
+
+</body>
+
+</html>
