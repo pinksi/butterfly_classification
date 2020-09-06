@@ -1,13 +1,17 @@
 <html>
 
 <head>
-    <title>Predict the butterfly</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <title>Predict the butterfly!!!</title>
+    <!-- <script src="app/templates/script.js"></script> -->
 </head>
 
 <body>
     <h1>Hello!! {{title}}</h1>
     <form action="{{ url_for('image_prediction') }}" method="POST" enctype="multipart/form-data">
-        <input name="image" type="file" />
+        <input name="image" id="imgFile" type="file" accept=".jpg, .jpeg, .png" />
+        <img id="imgg" src="#" />
         <input type="submit" value="Predict" />
     </form>
 
@@ -24,5 +28,22 @@
     </ul>
 
 </body>
+
+<script>
+    function display(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (event) {
+                $('#imgg').attr('src', event.target.result).width(150)
+                    .height(200);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#imgFile").change(function () {
+        display(this);
+    });
+</script>
 
 </html>

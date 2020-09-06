@@ -22,18 +22,32 @@ def image_prediction():
 
     file_name = image.filename
     logger.info(f"Sending request for: {file_name}")
-    data = predict_image(image)
-    res = {
-        "file_name": file_name,
-        "predicted_class": data[0],
-        "predicted_probability": data[1],
-    }
+    try:
+        data = predict_image(image)
+        res = {
+            "file_name": file_name,
+            "predicted_class": data[0],
+            "predicted_probability": data[1],
+        }
+    except Exception as e:
+        logger.error(f"Exception {e} occurred!!")
+        res = {
+            "file_name": file_name,
+            "predicted_class": "Not determined",
+            "predicted_probability": "Not determined",
+        }
+
     # return jsonify(res), 200
     return render_template("index.html", title="Welcome", data=[res])
 
 
-@app.route("/")
+@app.route("/", methods=["GET"])
 def index():
+    return render_template("index.html", title="Welcome")
+
+
+@app.route("/predict/butterfly/", methods=["GET"])
+def redirect():
     return render_template("index.html", title="Welcome")
 
 
