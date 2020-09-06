@@ -42,3 +42,4 @@ http://127.0.0.1:5000/predict/butterfly/
 OR
 
 Upload the image file and click `predict` button at `http://127.0.0.1:5000/`
+![img](https://github.com/pinksi/butterfly_classification/blob/master/readme_img.jpg)
